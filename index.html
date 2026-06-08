@@ -7,11 +7,25 @@
     <!-- Iconos de FontAwesome opcionales vía CDN para complementar, pero usaremos CSS nativo y SVG para máxima compatibilidad -->
 </head>
 <body>
+    
+    <!-- Contenedor y Botón flotante nativo (Colocar aquí al inicio del body) -->
+    <div class="tracker-top">
+        <a href="#inicio" class="btn-top" title="Volver arriba">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Tu Header continúa igual abajo... -->
+    <header class="main-header">
 
     <!-- Header / Navegación -->
     <header class="main-header">
         <div class="header-container">
-            <div class="logo">Cosme<span>mish</span></div>
+            <div class="logo">
+                <a href="#inicio">Cosme<span>mish</span></a>
+            </div>
             <nav class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#servicios">Servicios</a>
