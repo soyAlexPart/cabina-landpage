@@ -788,40 +788,25 @@ a {
 }
 
 /* ==========================================================================
-   BOTÓN VOLVER ARRIBA
+   BOTÓN VOLVER ARRIBA - CORREGIDO (100% CSS PURO)
    ========================================================================== */
 
-/* Caja invisible que rastrea el inicio de la página */
-.tracker-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 400px; /* Determina qué tanto debe bajar el usuario para que salte el botón */
-    pointer-events: none; /* No interfiere con los clics de la página */
-}
-
-/* El botón se vuelve "sticky" basado en el contenedor invisible */
 .btn-top {
-    position: sticky;
-    top: calc(100vh - 80px); /* Se posiciona al fondo de la pantalla del teléfono */
-    left: calc(100% - 80px); /* Se posiciona a la derecha */
+    position: fixed;            /* Se queda flotando de forma permanente en pantalla */
+    bottom: 30px;               /* Distancia fija desde el fondo */
+    right: 30px;                /* Distancia fija desde la derecha */
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45px;
-    height: 45px;
+    width: 48px;
+    height: 48px;
     background-color: var(--bg-secondary);
     color: var(--accent-darkgold);
     border: 1px solid rgba(197, 168, 128, 0.4);
     border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    pointer-events: auto; /* Reactiva los clics solo en el botón */
-    z-index: 999;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    
-    /* El truco de magia: se esconde si el tracker sigue visible */
-    margin-top: 400px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 9999;              /* Pasa por encima de todas las secciones al bajar */
+    transition: var(--transition-smooth);
 }
 
 .btn-top:hover {
@@ -831,12 +816,12 @@ a {
     transform: translateY(-3px);
 }
 
-/* Ajuste fino para pantallas móviles */
+/* Adaptación perfecta para pantallas de celular */
 @media (max-width: 480px) {
     .btn-top {
-        top: calc(100vh - 70px);
-        left: calc(100% - 65px);
-        width: 40px;
-        height: 40px;
+        bottom: 25px;
+        right: 25px;
+        width: 44px;
+        height: 44px;
     }
 }
