@@ -1,0 +1,779 @@
+/* ==========================================================================
+   AURA VITAL - ESTILOS PROFESIONALES E IMPACTANTES (SÓLO HTML & CSS)
+   ========================================================================== */
+
+/* Variables de Color e Identidad - Tonos Lujosos, Relajantes y Premium */
+:root {
+    --bg-primary: #f6f3ee;       /* Crema suave y orgánico de fondo */
+    --bg-secondary: #ffffff;     /* Blanco puro para contrastes y tarjetas */
+    --accent-gold: #c5a880;      /* Dorado champaña apagado (Lujo y Elegancia) */
+    --accent-darkgold: #a68962;  /* Dorado oscuro para legibilidad de textos */
+    --text-main: #3a3835;        /* Gris piedra ultra-oscuro para lectura suave */
+    --text-muted: #706c64;       /* Gris medio para subtítulos y descripciones */
+    --whatsapp-green: #25d366;   /* Color oficial WhatsApp */
+    --whatsapp-hover: #20ba5a;
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Reset Global y Caja Compresiva */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Enlaces globales */
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   HEADER / NAVEGACIÓN
+   ========================================================================== */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(246, 243, 238, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text-main);
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: var(--accent-gold);
+    font-weight: 300;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--accent-gold);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.btn-header {
+    padding: 10px 20px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-darkgold);
+}
+
+.btn-header:hover {
+    background-color: var(--accent-gold);
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (INICIO) + ANIMACIONES IMPACTANTES
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 140px 24px 80px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 80% 20%, #fcfbfa 0%, #f6f3ee 100%);
+    overflow: hidden;
+}
+
+/* Blobs de Fondo Orgánicos Animados */
+.hero-shapes .shape-blob {
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(237, 227, 212, 0.6) 0%, rgba(217, 198, 171, 0.4) 100%);
+    border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%;
+    filter: blur(40px);
+    animation: blobMover 18s infinite alternate ease-in-out;
+    z-index: 1;
+}
+
+.hero-shapes .shape-blob-2 {
+    position: absolute;
+    bottom: -10%;
+    left: -5%;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(197, 168, 128, 0.2) 0%, rgba(230, 220, 205, 0.5) 100%);
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    filter: blur(50px);
+    animation: blobMover 14s infinite alternate-reverse ease-in-out;
+    z-index: 1;
+}
+
+@keyframes blobMover {
+    0% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 43% 57% 70% 30% / 45% 45% 55% 55%; }
+    50% { transform: translate(50px, -30px) scale(1.1) rotate(90deg); border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; }
+    100% { transform: translate(-20px, 40px) scale(0.9) rotate(180deg); border-radius: 30% 70% 40% 60% / 50% 30% 70% 50%; }
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-subtitle {
+    display: inline-block;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-darkgold);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    line-height: 1.15;
+    font-weight: 300;
+    color: var(--text-main);
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+
+.hero-text {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: var(--text-main);
+    color: #fff;
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(58, 56, 53, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(197, 168, 128, 0.35);
+}
+
+.btn-secondary {
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    padding: 16px 36px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--text-main);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   ESTILOS DE SECCIÓN COMUNES
+   ========================================================================== */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 24px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-darkgold);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 300;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.title-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 20px auto 0 auto;
+}
+
+/* ==========================================================================
+   SECCIÓN SERVICIOS (TARJETAS PREMIUM CON EFECTO HOVER)
+   ========================================================================== */
+.services-section {
+    background-color: var(--bg-secondary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background-color: var(--bg-primary);
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(197, 168, 128, 0.1);
+}
+
+.service-img-wrapper {
+    height: 220px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ebdcd0, #c5a880);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.service-icon {
+    font-size: 3rem;
+    transition: var(--transition-smooth);
+}
+
+.service-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #fff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-darkgold);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-info {
+    padding: 25px 15px 15px 15px;
+}
+
+.service-info h3 {
+    font-size: 1.35rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.service-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    height: 72px; /* Alineación del texto básico */
+    overflow: hidden;
+}
+
+.service-price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-darkgold);
+}
+
+/* Efectos Hover de Tarjeta Única */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(197, 168, 128, 0.15);
+    border-color: rgba(197, 168, 128, 0.4);
+}
+
+.service-card:hover .service-img-wrapper {
+    transform: scale(0.98);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* ==========================================================================
+   SECCIÓN LA EXPERIENCIA (INTERACTIVA Y VISUAL)
+   ========================================================================== */
+.experience-section {
+    background-color: var(--bg-primary);
+    padding: 100px 24px;
+    overflow: hidden;
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 60px;
+    align-items: center;
+}
+
+.experience-content {
+    padding-right: 20px;
+}
+
+.experience-content p {
+    color: var(--text-muted);
+    margin-bottom: 35px;
+    font-size: 1.05rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+}
+
+.feature-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--accent-gold);
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* Bloque Visual Flotante Magnífico */
+.experience-visual {
+    height: 400px;
+    background: linear-gradient(135deg, #e3dacd, #cbbaa3);
+    border-radius: 40px;
+    position: relative;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+}
+
+.floating-card {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    animation: floatEffect 6s infinite ease-in-out;
+}
+
+.text-card {
+    top: 20%;
+    left: -40px;
+    text-align: center;
+}
+
+.text-card h5 {
+    font-size: 2rem;
+    color: var(--accent-darkgold);
+    font-weight: 700;
+}
+
+.text-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visual-box {
+    bottom: 15%;
+    right: -20px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-delay: -3s;
+}
+
+.visual-emoji {
+    font-size: 2.5rem;
+    z-index: 2;
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent-gold);
+    border-radius: 20px;
+    animation: pulse 3s infinite linear;
+    z-index: 1;
+}
+
+@keyframes floatEffect {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 1; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+
+/* ==========================================================================
+   SECCIÓN FORMULARIO DE RESERVA INTELIGENTE + CALENDARIO STYLED
+   ========================================================================== */
+.booking-section {
+    background-color: var(--bg-secondary);
+}
+
+.section-description {
+    max-width: 600px;
+    margin: 15px auto 0 auto;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.booking-wrapper {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: var(--bg-primary);
+    padding: 50px 40px;
+    border-radius: 32px;
+    box-shadow: 0 20px 50px rgba(197, 168, 128, 0.1);
+    border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.booking-form .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    letter-spacing: 0.5px;
+}
+
+/* Estilización Avanzada de Inputs Sin Dependencias */
+.form-group input, 
+.form-group select {
+    padding: 16px 20px;
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    border-radius: 14px;
+    background-color: #fff;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition-smooth);
+    font-family: inherit;
+    -webkit-appearance: none; /* Quita estilos nativos iOS */
+}
+
+/* Habilitar flecha personalizada elegante en selects nativos */
+.form-group select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a68962' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    padding-right: 45px;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+    border-color: var(--accent-darkgold);
+    box-shadow: 0 0 0 4px rgba(197, 168, 128, 0.15);
+    background-color: #fff;
+}
+
+/* Estilo para el input date (Calendario Nativo de Teléfono/PC altamente pulido) */
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a68962' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect><line x1='16' y1='2' x2='16' y2='6'></line><line x1='8' y1='2' x2='8' y2='6'></line><line x1='3' y1='10' x2='21' y2='10'></line></svg>") no-repeat;
+    cursor: pointer;
+    background-size: 20px;
+}
+
+/* BOTÓN WHATSAPP IMPACTANTE CON ANIMACIÓN DE RESPIRACIÓN */
+.form-submit-container {
+    text-align: center;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--whatsapp-green);
+    color: #fff;
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    transition: var(--transition-smooth);
+    width: 100%;
+    max-width: 450px;
+    animation: pulseWhatsApp 2.5s infinite;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-hover);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(32, 186, 90, 0.45);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes pulseWhatsApp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.main-footer {
+    background-color: var(--text-main);
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin-bottom: 8px;
+}
+
+.footer-note {
+    color: var(--accent-gold);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO EXTREMO (MOBILE, TABLET, DESKTOP)
+   ========================================================================== */
+
+/* Ajustes para Computadoras Medianas / Tablets en Horizontal */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 15px 24px;
+    }
+    .nav-links {
+        gap: 20px;
+    }
+    .booking-wrapper {
+        padding: 40px 24px;
+    }
+}
+
+/* Ajustes para Tablets en Vertical (max-width: 768px) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simplificación para landing limpia sin JS de menú */
+    }
+    .main-header .btn-header {
+        margin-left: auto;
+    }
+    .hero-section {
+        padding-top: 120px;
+    }
+    .experience-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .experience-visual {
+        height: 300px;
+    }
+    .text-card {
+        left: 20px;
+        top: 10%;
+    }
+}
+
+/* Ajustes para Teléfonos Móviles (max-width: 480px) */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 12px 16px;
+    }
+    .logo {
+        font-size: 1.25rem;
+        letter-spacing: 1.5px;
+    }
+    .btn-header {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+    .hero-section {
+        padding: 100px 16px 60px 16px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+    .section-container {
+        padding: 60px 16px;
+    }
+    .booking-wrapper {
+        padding: 30px 16px;
+        border-radius: 20px;
+    }
+    .booking-form .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .btn-whatsapp {
+        padding: 16px 20px;
+        font-size: 1rem;
+    }
+    .visual-box {
+        right: 10px;
+        bottom: 10%;
+        width: 90px;
+        height: 90px;
+    }
+    .visual-emoji {
+        font-size: 2rem;
+    }
+}
+
+
+:root {
+    --bg-primary: #f6f3ee;
+    --bg-secondary: #ffffff;
+    --accent-gold: #c5a880;
+    --accent-darkgold: #a68962;
+    --text-main: #3a3835;
+    --text-muted: #706c64;
+    --whatsapp-green: #25d366;
+    --insta-color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
