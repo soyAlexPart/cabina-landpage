@@ -571,9 +571,16 @@ a {
     letter-spacing: 0.5px;
 }
 
+/* ==========================================================================
+   CAMBIA ESTA SECCIÓN (Aprox. Línea 335)
+   ========================================================================== */
+
 /* Estilización Avanzada de Inputs Sin Dependencias */
 .form-group input, 
 .form-group select {
+    width: 100%;             /* 1. Fuerza a ocupar el ancho de su contenedor */
+    max-width: 100%;         /* 2. Evita desbordes */
+    box-sizing: border-box;  /* 3. ¡EL TRUCO CRUCIAL! El padding ahora cuenta dentro del ancho */
     padding: 16px 20px;
     border: 1px solid rgba(197, 168, 128, 0.3);
     border-radius: 14px;
@@ -584,6 +591,7 @@ a {
     transition: var(--transition-smooth);
     font-family: inherit;
     -webkit-appearance: none; /* Quita estilos nativos iOS */
+    display: block;          /* Asegura comportamiento de bloque en iOS/Android */
 }
 
 /* Habilitar flecha personalizada elegante en selects nativos */
@@ -593,6 +601,7 @@ a {
     background-position: right 15px center;
     background-size: 18px;
     padding-right: 45px;
+    box-sizing: border-box;  /* Asegura el cálculo correcto aquí también */
 }
 
 .form-group input:focus, 
