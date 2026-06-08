@@ -27,15 +27,23 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-main);
+    
+    /* CORRECCIÓN MÓVIL: Evitamos que el overflow rompa los elementos fijos */
     overflow-x: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    
+    /* CORRECCIÓN MÓVIL: Asegura que el scroll se ejecute en el body correcto */
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* Suaviza el scroll nativo en iPhones */
 }
-
 /* Enlaces globales */
 a {
     text-decoration: none;
