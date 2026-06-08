@@ -299,7 +299,7 @@
             }
 
             // 2. Construimos el texto con la nueva fecha formateada
-            const txt = `Hola Cosme Mish, deseo agendar una cita.\n\n👤 *Nombre:* ${nombre.value}\n✨ *Servicio:* ${servicio.value}\n📅 *Fecha:* ${fechaFormateada}\n⏰ *Hora:* ${hora.value}`;
+            const txt = `Hola Cosme Mish, deseo agendar una cita.\n\n👤 *Nombre:* ${nombre.value}\n✨ *Servicio:* ${servicio.value}\n📅 *Fecha y hora:* ${fechaFormateada} *a las * ${hora.value}`;
             
             whatsappText.value = txt;
         }
