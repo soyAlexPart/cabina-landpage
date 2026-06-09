@@ -833,3 +833,22 @@ a {
         height: 44px;
     }
 }
+
+/* Contenedor para asegurar el centrado absoluto */
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre la foto y el texto inferior */
+    width: 100%;
+    text-align: center;
+}
+
+/* Estilo de la fotografía */
+.profile-photo {
+    width: 150px;       /* Ajusta el tamaño a tu gusto */
+    height: 150px;      /* Debe ser igual al width para que sea un círculo perfecto */
+    object-fit: cover;  /* Evita que la imagen se distorsione */
+    border-radius: 50%; /* Hace la foto completamente circular (estilo perfil) */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra sutil elegante */
+}
