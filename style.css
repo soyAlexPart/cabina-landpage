@@ -1,5 +1,5 @@
 /* ==========================================================================
-   AURA VITAL - ESTILOS PROFESIONALES E IMPACTANTES (SÓLO HTML & CSS)
+   AURA VITAL / COSME MISH - ESTILOS PROFESIONALES E IMPACTANTES
    ========================================================================== */
 
 /* Variables de Color e Identidad - Tonos Lujosos, Relajantes y Premium */
@@ -12,6 +12,7 @@
     --text-muted: #706c64;       /* Gris medio para subtítulos y descripciones */
     --whatsapp-green: #25d366;   /* Color oficial WhatsApp */
     --whatsapp-hover: #20ba5a;
+    --insta-color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -27,8 +28,6 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-main);
-    
-    /* CORRECCIÓN MÓVIL: Evitamos que el overflow rompa los elementos fijos */
     overflow-x: hidden;
     height: 100%;
     width: 100%;
@@ -38,12 +37,11 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    
-    /* CORRECCIÓN MÓVIL: Asegura que el scroll se ejecute en el body correcto */
     width: 100%;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch; /* Suaviza el scroll nativo en iPhones */
 }
+
 /* Enlaces globales */
 a {
     text-decoration: none;
@@ -155,7 +153,6 @@ a {
     overflow: hidden;
 }
 
-/* Blobs de Fondo Orgánicos Animados */
 .hero-shapes .shape-blob {
     position: absolute;
     top: 10%;
@@ -306,6 +303,59 @@ a {
 }
 
 /* ==========================================================================
+   SECCIÓN ESPECIALISTA (PERFIL CENTRADO)
+   ========================================================================== */
+.profile-section {
+    background-color: var(--bg-primary);
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    border: 3px solid var(--bg-secondary);
+}
+
+.seccion-perfil-texto {
+    text-align: center;
+    padding: 0 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.seccion-perfil-texto h2 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--text-main);
+    margin: 10px 0;
+}
+
+.profile-title {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent-darkgold);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.profile-bio {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* ==========================================================================
    SECCIÓN SERVICIOS (TARJETAS PREMIUM CON EFECTO HOVER)
    ========================================================================== */
 .services-section {
@@ -374,7 +424,7 @@ a {
     color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 20px;
-    height: 72px; /* Alineación del texto básico */
+    height: 72px;
     overflow: hidden;
 }
 
@@ -385,7 +435,6 @@ a {
     color: var(--accent-darkgold);
 }
 
-/* Efectos Hover de Tarjeta Única */
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(197, 168, 128, 0.15);
@@ -461,7 +510,6 @@ a {
     margin: 0;
 }
 
-/* Bloque Visual Flotante Magnífico */
 .experience-visual {
     height: 400px;
     background: linear-gradient(135deg, #e3dacd, #cbbaa3);
@@ -579,12 +627,11 @@ a {
     letter-spacing: 0.5px;
 }
 
-/* Estilización Avanzada de Inputs Sin Dependencias */
 .form-group input, 
 .form-group select {
-    width: 100%;             /* 1. Fuerza a ocupar el ancho de su contenedor */
-    max-width: 100%;         /* 2. Evita desbordes */
-    box-sizing: border-box;  /* 3. ¡EL TRUCO CRUCIAL! El padding ahora cuenta dentro del ancho */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 16px 20px;
     border: 1px solid rgba(197, 168, 128, 0.3);
     border-radius: 14px;
@@ -594,18 +641,17 @@ a {
     outline: none;
     transition: var(--transition-smooth);
     font-family: inherit;
-    -webkit-appearance: none; /* Quita estilos nativos iOS */
-    display: block;          /* Asegura comportamiento de bloque en iOS/Android */
+    -webkit-appearance: none;
+    display: block;
 }
 
-/* Habilitar flecha personalizada elegante en selects nativos */
 .form-group select {
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a68962' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'></polyline></svg>");
     background-repeat: no-repeat;
     background-position: right 15px center;
     background-size: 18px;
     padding-right: 45px;
-    box-sizing: border-box;  /* Asegura el cálculo correcto aquí también */
+    box-sizing: border-box;
 }
 
 .form-group input:focus, 
@@ -615,18 +661,17 @@ a {
     background-color: #fff;
 }
 
-/* Estilo para el input date (Calendario Nativo de Teléfono/PC altamente pulido) */
 .form-group input[type="date"]::-webkit-calendar-picker-indicator {
     background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a68962' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2' ry='2'></rect><line x1='16' y1='2' x2='16' y2='6'></line><line x1='8' y1='2' x2='8' y2='6'></line><line x1='3' y1='10' x2='21' y2='10'></line></svg>") no-repeat;
     cursor: pointer;
     background-size: 20px;
 }
 
-/* BOTÓN WHATSAPP IMPACTANTE CON ANIMACIÓN DE RESPIRACIÓN */
 .form-submit-container {
     text-align: center;
 }
 
+/* BOTÓN WHATSAPP OPTIMIZADO */
 .btn-whatsapp {
     display: inline-flex;
     align-items: center;
@@ -653,15 +698,47 @@ a {
     box-shadow: 0 15px 30px rgba(32, 186, 90, 0.45);
 }
 
+/* CORRECCIÓN ICONO WHATSAPP PARA NAVEGADORES MÓVILES */
 .whatsapp-icon {
-    width: 24px;
-    height: 24px;
+    width: 22px !important;
+    height: 22px !important;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 @keyframes pulseWhatsApp {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
     70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* ==========================================================================
+   BOTÓN VOLVER ARRIBA (100% CSS PURO)
+   ========================================================================== */
+.btn-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: var(--bg-secondary);
+    color: var(--accent-darkgold);
+    border: 1px solid rgba(197, 168, 128, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 9999;
+    transition: var(--transition-smooth);
+}
+
+.btn-top:hover {
+    background-color: var(--accent-gold);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.3);
+    transform: translateY(-3px);
 }
 
 /* ==========================================================================
@@ -688,8 +765,6 @@ a {
 /* ==========================================================================
    DISEÑO RESPONSIVO EXTREMO (MOBILE, TABLET, DESKTOP)
    ========================================================================== */
-
-/* Ajustes para Computadoras Medianas / Tablets en Horizontal */
 @media (max-width: 1024px) {
     .header-container {
         padding: 15px 24px;
@@ -702,10 +777,9 @@ a {
     }
 }
 
-/* Ajustes para Tablets en Vertical (max-width: 768px) */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Simplificación para landing limpia sin JS de menú */
+        display: none;
     }
     .main-header .btn-header {
         margin-left: auto;
@@ -726,7 +800,6 @@ a {
     }
 }
 
-/* Ajustes para Teléfonos Móviles (max-width: 480px) */
 @media (max-width: 480px) {
     .header-container {
         padding: 12px 16px;
@@ -776,75 +849,10 @@ a {
     .visual-emoji {
         font-size: 2rem;
     }
-}
-
-
-:root {
-    --bg-primary: #f6f3ee;
-    --bg-secondary: #ffffff;
-    --accent-gold: #c5a880;
-    --accent-darkgold: #a68962;
-    --text-main: #3a3835;
-    --text-muted: #706c64;
-    --whatsapp-green: #25d366;
-    --insta-color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* ==========================================================================
-   BOTÓN VOLVER ARRIBA - CORREGIDO (100% CSS PURO)
-   ========================================================================== */
-
-.btn-top {
-    position: fixed;            /* Se queda flotando de forma permanente en pantalla */
-    bottom: 30px;               /* Distancia fija desde el fondo */
-    right: 30px;                /* Distancia fija desde la derecha */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: var(--bg-secondary);
-    color: var(--accent-darkgold);
-    border: 1px solid rgba(197, 168, 128, 0.4);
-    border-radius: 50%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    z-index: 9999;              /* Pasa por encima de todas las secciones al bajar */
-    transition: var(--transition-smooth);
-}
-
-.btn-top:hover {
-    background-color: var(--accent-gold);
-    color: #ffffff;
-    box-shadow: 0 8px 20px rgba(197, 168, 128, 0.3);
-    transform: translateY(-3px);
-}
-
-/* Adaptación perfecta para pantallas de celular */
-@media (max-width: 480px) {
     .btn-top {
         bottom: 25px;
         right: 25px;
         width: 44px;
         height: 44px;
     }
-}
-
-/* Contenedor para asegurar el centrado absoluto */
-.profile-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px; /* Espacio entre la foto y el texto inferior */
-    width: 100%;
-    text-align: center;
-}
-
-/* Estilo de la fotografía */
-.profile-photo {
-    width: 150px;       /* Ajusta el tamaño a tu gusto */
-    height: 150px;      /* Debe ser igual al width para que sea un círculo perfecto */
-    object-fit: cover;  /* Evita que la imagen se distorsione */
-    border-radius: 50%; /* Hace la foto completamente circular (estilo perfil) */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Una sombra sutil elegante */
 }
